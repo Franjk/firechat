@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 
+import 'firebase/firestore';
+import 'firebase/auth';
+import { useUser } from 'reactfire';
+
+import ChatRoom from './components/ChatRoom';
+import SignIn from './components/SignIn';
+import SignOut from './components/SignOut';
+
 function App() {
+  const { data: user } = useUser();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h1>⚛️🔥💬</h1>
+        <SignOut />
       </header>
+      <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
 }
