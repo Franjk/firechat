@@ -4,7 +4,7 @@ Chat application made with react and firebase.
 
 Log in with your google account and publish a public message for everyone to read.
 
-Live demo at:
+- [Live demo](http://franjk.github.io/firechat)
 
 ## Sample
 
